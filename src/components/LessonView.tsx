@@ -8,6 +8,7 @@ import { allLessons } from "@/data/content";
 import { DoPanel, DontPanel, ObjectivesBox, SafetyPanel } from "./Panels";
 import { YouTubeEmbed } from "./YouTubeEmbed";
 import { ColourSwatches } from "./ColourSwatches";
+import { LessonDiagram } from "./LessonDiagram";
 import { ProgressBar } from "./ProgressRing";
 import { getLessonStatus, setLessonStatus } from "@/lib/progress";
 import { useStoreVersion } from "@/lib/hooks";
@@ -93,6 +94,9 @@ export function LessonView({ module, lesson }: { module: Module; lesson: Lesson 
           <ColourSwatches />
         </section>
       )}
+
+      {/* Labelled instructional diagram(s) for this lesson, where available */}
+      <LessonDiagram slug={lesson.slug} />
 
       <section>
         <h2 className="mb-3">Step-by-step method</h2>
